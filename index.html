@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <title>RoadMap</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Monaco Editor -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
 </head>
 <body>
     <!-- Animated Background -->
@@ -324,6 +326,49 @@
         </section>
     </main>
 
+    <!-- Code Editor Modal -->
+    <div class="code-editor-modal" id="code-editor-modal">
+        <div class="code-editor-content">
+            <i class="fa-solid fa-x" id="close-code-editor"></i>
+            <div class="editor-container">
+                <div class="problem-panel" id="problem-panel">
+                    <div class="problem-header">
+                        <h2 id="problem-title">Problem Title</h2>
+                        <span id="problem-difficulty" class="difficulty-badge">Easy</span>
+                    </div>
+                    <div class="problem-description" id="problem-description">
+                        <!-- Problem description will be inserted here -->
+                    </div>
+                    <div class="test-cases-section">
+                        <h3>Test Cases</h3>
+                        <div id="test-cases-container">
+                            <!-- Test cases will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="resizer" id="resizer"></div>
+                <div class="editor-panel" id="editor-panel">
+                    <div class="editor-header">
+                        <span class="language-indicator">Java</span>
+                        <button class="run-button" id="run-button">
+                            <i class="fa-solid fa-play"></i> Run
+                        </button>
+                    </div>
+                    <div id="code-editor" class="monaco-editor-container"></div>
+                    <div class="resizer-vertical" id="output-resizer"></div>
+                    <div class="output-section" id="output-section">
+                        <div class="output-header">
+                            <span>Output</span>
+                        </div>
+                        <div class="output-content" id="output-content">
+                            <p class="output-placeholder">Click "Run" to execute your code</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Chatbot Container -->
     <div class="chatbot-container" id="chatbot-container" style="display: none;">
         <iframe
@@ -480,6 +525,8 @@
             }
         });
     </script>
+
+    <script src="main.js"></script>
 
 </body>
 </html>
