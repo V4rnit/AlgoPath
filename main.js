@@ -517,6 +517,388 @@ public class Solution {
             { input: { head: [1,2], pos: 0 }, expected: true },
             { input: { head: [1], pos: -1 }, expected: false }
         ]
+    },
+    "trapping-rain-water": {
+        title: "Trapping Rain Water",
+        difficulty: "Hard",
+        description: `
+            <p>Given <code>n</code> non-negative integers representing an elevation map where the width of each bar is <code>1</code>, compute how much water it can trap after raining.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.</pre>
+        `,
+        defaultCode: `class Solution {
+    public int trap(int[] height) {
+        // Your code here
+        return 0;
+    }
+}`,
+        testCases: [
+            { input: { height: [0,1,0,2,1,0,1,3,2,1,2,1] }, expected: 6 },
+            { input: { height: [4,2,0,3,2,5] }, expected: 9 }
+        ]
+    },
+    "largest-rectangle-in-histogram": {
+        title: "Largest Rectangle in Histogram",
+        difficulty: "Hard",
+        description: `
+            <p>Given an array of integers <code>heights</code> representing the histogram's bar height where the width of each bar is <code>1</code>, return <em>the area of the largest rectangle in the histogram</em>.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: heights = [2,1,5,6,2,3]
+Output: 10
+Explanation: The above is a histogram where width of each bar is 1.
+The largest rectangle is shown in the red area, which has an area = 10 units.</pre>
+        `,
+        defaultCode: `class Solution {
+    public int largestRectangleArea(int[] heights) {
+        // Your code here
+        return 0;
+    }
+}`,
+        testCases: [
+            { input: { heights: [2,1,5,6,2,3] }, expected: 10 },
+            { input: { heights: [2,4] }, expected: 4 }
+        ]
+    },
+    "car-fleet": {
+        title: "Car Fleet",
+        difficulty: "Medium",
+        description: `
+            <p>There are <code>n</code> cars going to the same destination along a one-lane road. The destination is <code>target</code> miles away.</p>
+            <p>You are given two integer arrays <code>position</code> and <code>speed</code>, both of length <code>n</code>, where <code>position[i]</code> is the position of the <code>i<sup>th</sup></code> car and <code>speed[i]</code> is the speed of the <code>i<sup>th</sup></code> car (in miles per hour).</p>
+            <p>A car can never pass another car ahead of it, but it can catch up to it and drive together at the speed of the slower car.</p>
+            <p>Return <em>the number of car fleets</em> that will arrive at the destination.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: target = 12, position = [10,8,0,5,3], speed = [2,4,1,1,3]
+Output: 3</pre>
+        `,
+        defaultCode: `class Solution {
+    public int carFleet(int target, int[] position, int[] speed) {
+        // Your code here
+        return 0;
+    }
+}`,
+        testCases: [
+            { input: { target: 12, position: [10,8,0,5,3], speed: [2,4,1,1,3] }, expected: 3 },
+            { input: { target: 10, position: [3], speed: [3] }, expected: 1 }
+        ]
+    },
+    "implement-queue-using-stacks": {
+        title: "Implement Queue using Stacks",
+        difficulty: "Easy",
+        description: `
+            <p>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (<code>push</code>, <code>peek</code>, <code>pop</code>, and <code>empty</code>).</p>
+            <h4>Example 1:</h4>
+            <pre>Input
+["MyQueue", "push", "push", "peek", "pop", "empty"]
+[[], [1], [2], [], [], []]
+Output
+[null, null, null, 1, 1, false]</pre>
+        `,
+        defaultCode: `class MyQueue {
+    public MyQueue() {
+        // Your code here
+    }
+    
+    public void push(int x) {
+        // Your code here
+    }
+    
+    public int pop() {
+        // Your code here
+        return 0;
+    }
+    
+    public int peek() {
+        // Your code here
+        return 0;
+    }
+    
+    public boolean empty() {
+        // Your code here
+        return false;
+    }
+}`,
+        testCases: [
+            { input: { operations: ["push", "push", "peek", "pop", "empty"], values: [1, 2, null, null, null] }, expected: [null, null, 1, 1, false] }
+        ]
+    },
+    "design-circular-queue": {
+        title: "Design Circular Queue",
+        difficulty: "Medium",
+        description: `
+            <p>Design your implementation of the circular queue. The circular queue is a linear data structure in which the operations are performed based on FIFO (First In First Out) principle, and the last position is connected back to the first position to make a circle.</p>
+            <h4>Example 1:</h4>
+            <pre>Input
+["MyCircularQueue", "enQueue", "enQueue", "enQueue", "enQueue", "Rear", "isFull", "deQueue", "enQueue", "Rear"]
+[[3], [1], [2], [3], [4], [], [], [], [4], []]
+Output
+[null, true, true, true, false, 3, true, true, true, 4]</pre>
+        `,
+        defaultCode: `class MyCircularQueue {
+    public MyCircularQueue(int k) {
+        // Your code here
+    }
+    
+    public boolean enQueue(int value) {
+        // Your code here
+        return false;
+    }
+    
+    public boolean deQueue() {
+        // Your code here
+        return false;
+    }
+    
+    public int Front() {
+        // Your code here
+        return -1;
+    }
+    
+    public int Rear() {
+        // Your code here
+        return -1;
+    }
+    
+    public boolean isEmpty() {
+        // Your code here
+        return false;
+    }
+    
+    public boolean isFull() {
+        // Your code here
+        return false;
+    }
+}`,
+        testCases: [
+            { input: { k: 3, operations: ["enQueue", "enQueue", "enQueue", "enQueue", "Rear", "isFull", "deQueue", "enQueue", "Rear"], values: [1, 2, 3, 4, null, null, null, 4, null] }, expected: [true, true, true, false, 3, true, true, true, 4] }
+        ]
+    },
+    "design-circular-deque": {
+        title: "Design Circular Deque",
+        difficulty: "Medium",
+        description: `
+            <p>Design your implementation of the circular double-ended queue (deque).</p>
+            <p>Implement the <code>MyCircularDeque</code> class:</p>
+            <ul>
+                <li><code>MyCircularDeque(int k)</code> Initializes the deque with a maximum size of <code>k</code>.</li>
+                <li><code>boolean insertFront()</code> Adds an item at the front of Deque.</li>
+                <li><code>boolean insertLast()</code> Adds an item at the rear of Deque.</li>
+                <li><code>boolean deleteFront()</code> Deletes an item from the front of Deque.</li>
+                <li><code>boolean deleteLast()</code> Deletes an item from the rear of Deque.</li>
+            </ul>
+        `,
+        defaultCode: `class MyCircularDeque {
+    public MyCircularDeque(int k) {
+        // Your code here
+    }
+    
+    public boolean insertFront(int value) {
+        // Your code here
+        return false;
+    }
+    
+    public boolean insertLast(int value) {
+        // Your code here
+        return false;
+    }
+    
+    public boolean deleteFront() {
+        // Your code here
+        return false;
+    }
+    
+    public boolean deleteLast() {
+        // Your code here
+        return false;
+    }
+    
+    public int getFront() {
+        // Your code here
+        return -1;
+    }
+    
+    public int getRear() {
+        // Your code here
+        return -1;
+    }
+    
+    public boolean isEmpty() {
+        // Your code here
+        return false;
+    }
+    
+    public boolean isFull() {
+        // Your code here
+        return false;
+    }
+}`,
+        testCases: [
+            { input: { k: 3, operations: ["insertLast", "insertLast", "insertFront", "insertFront", "getRear", "isFull", "deleteLast", "insertFront", "getFront"], values: [1, 2, 3, 4, null, null, null, 4, null] }, expected: [true, true, true, false, 2, true, true, true, 4] }
+        ]
+    },
+    "remove-nth-node-from-end-of-list": {
+        title: "Remove Nth Node From End of List",
+        difficulty: "Medium",
+        description: `
+            <p>Given the head of a linked list, remove the <code>n<sup>th</sup></code> node from the end of the list and return its head.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]</pre>
+        `,
+        defaultCode: `/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        // Your code here
+        return null;
+    }
+}`,
+        testCases: [
+            { input: { head: [1,2,3,4,5], n: 2 }, expected: [1,2,3,5] },
+            { input: { head: [1], n: 1 }, expected: [] },
+            { input: { head: [1,2], n: 1 }, expected: [1] }
+        ]
+    },
+    "add-two-numbers": {
+        title: "Add Two Numbers",
+        difficulty: "Medium",
+        description: `
+            <p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.</p>
+            <p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.</pre>
+        `,
+        defaultCode: `/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // Your code here
+        return null;
+    }
+}`,
+        testCases: [
+            { input: { l1: [2,4,3], l2: [5,6,4] }, expected: [7,0,8] },
+            { input: { l1: [0], l2: [0] }, expected: [0] },
+            { input: { l1: [9,9,9,9,9,9,9], l2: [9,9,9,9] }, expected: [8,9,9,9,0,0,0,1] }
+        ]
+    },
+    "longest-palindromic-substring": {
+        title: "Longest Palindromic Substring",
+        difficulty: "Medium",
+        description: `
+            <p>Given a string <code>s</code>, return <em>the longest palindromic substring</em> in <code>s</code>.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.</pre>
+            <h4>Example 2:</h4>
+            <pre>Input: s = "cbbd"
+Output: "bb"</pre>
+        `,
+        defaultCode: `class Solution {
+    public String longestPalindrome(String s) {
+        // Your code here
+        return "";
+    }
+}`,
+        testCases: [
+            { input: { s: "babad" }, expected: "bab" },
+            { input: { s: "cbbd" }, expected: "bb" },
+            { input: { s: "a" }, expected: "a" }
+        ]
+    },
+    "group-anagrams": {
+        title: "Group Anagrams",
+        difficulty: "Medium",
+        description: `
+            <p>Given an array of strings <code>strs</code>, group <strong>the anagrams</strong> together. You can return the answer in <strong>any order</strong>.</p>
+            <p>An <strong>Anagram</strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]</pre>
+        `,
+        defaultCode: `class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        // Your code here
+        return new ArrayList<>();
+    }
+}`,
+        testCases: [
+            { input: { strs: ["eat","tea","tan","ate","nat","bat"] }, expected: [["bat"],["nat","tan"],["ate","eat","tea"]] },
+            { input: { strs: [""] }, expected: [[""]] },
+            { input: { strs: ["a"] }, expected: [["a"]] }
+        ]
+    },
+    "encode-and-decode-strings": {
+        title: "Encode and Decode Strings",
+        difficulty: "Medium",
+        description: `
+            <p>Design an algorithm to encode a list of strings to a string. The encoded string is then sent over the network and is decoded back to the original list of strings.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: ["lint","code","love","you"]
+Output: ["lint","code","love","you"]
+Explanation:
+One possible encode method is: "lint:;code:;love:;you"</pre>
+        `,
+        defaultCode: `public class Codec {
+    // Encodes a list of strings to a single string.
+    public String encode(List<String> strs) {
+        // Your code here
+        return "";
+    }
+
+    // Decodes a single string to a list of strings.
+    public List<String> decode(String s) {
+        // Your code here
+        return new ArrayList<>();
+    }
+}`,
+        testCases: [
+            { input: { strs: ["lint","code","love","you"] }, expected: ["lint","code","love","you"] },
+            { input: { strs: ["we","say",":","yes"] }, expected: ["we","say",":","yes"] }
+        ]
+    },
+    "longest-repeating-character-replacement": {
+        title: "Longest Repeating Character Replacement",
+        difficulty: "Medium",
+        description: `
+            <p>You are given a string <code>s</code> and an integer <code>k</code>. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most <code>k</code> times.</p>
+            <p>Return <em>the length of the longest substring containing the same letter you can get after performing the above operations</em>.</p>
+            <h4>Example 1:</h4>
+            <pre>Input: s = "ABAB", k = 2
+Output: 4
+Explanation: Replace the two 'A's with two 'B's or vice versa.</pre>
+        `,
+        defaultCode: `class Solution {
+    public int characterReplacement(String s, int k) {
+        // Your code here
+        return 0;
+    }
+}`,
+        testCases: [
+            { input: { s: "ABAB", k: 2 }, expected: 4 },
+            { input: { s: "AABABBA", k: 1 }, expected: 4 }
+        ]
     }
 };
 
