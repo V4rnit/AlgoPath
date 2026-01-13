@@ -1,5 +1,7 @@
 # AlgoPath - DSA Roadmap
 
+**Created by Varnit Rawat**
+
 A modern, interactive roadmap for mastering Data Structures and Algorithms. This website provides a curated list of LeetCode problems organized by topic, with direct links to problem descriptions and NeetCode video solutions.
 
 ## Features

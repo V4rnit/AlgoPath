@@ -904,9 +904,13 @@ Explanation: Replace the two 'A's with two 'B's or vice versa.</pre>
 
 // Monaco Editor instance
 let editor = null;
+let vimMode = null;
 
 // Current problem being solved
 let currentProblem = null;
+
+// Vim mode state
+let isVimEnabled = false;
 
 // Initialize Monaco Editor
 function initMonacoEditor() {
@@ -935,8 +939,72 @@ function initMonacoEditor() {
                 formatOnPaste: true,
                 formatOnType: true
             });
+            
+            // Initialize vim mode if enabled (wait a bit for vim library to load)
+            setTimeout(() => {
+                const savedVimState = localStorage.getItem('vimModeEnabled');
+                if (savedVimState === 'true' && typeof MonacoVim !== 'undefined') {
+                    toggleVimMode(true);
+                }
+            }, 500);
         }
     });
+}
+
+// Toggle Vim mode
+function toggleVimMode(enable) {
+    if (!editor) {
+        console.warn('Editor not initialized yet');
+        return;
+    }
+    
+    if (enable) {
+        if (typeof MonacoVim === 'undefined') {
+            console.warn('MonacoVim library not loaded. Please refresh the page.');
+            alert('Vim mode library is loading. Please wait a moment and try again.');
+            return;
+        }
+        
+        if (!vimMode) {
+            try {
+                vimMode = MonacoVim.initVimMode(editor);
+                isVimEnabled = true;
+                localStorage.setItem('vimModeEnabled', 'true');
+                updateVimButton(true);
+            } catch (error) {
+                console.error('Error initializing Vim mode:', error);
+                alert('Error enabling Vim mode. Please try again.');
+            }
+        }
+    } else {
+        if (vimMode) {
+            try {
+                vimMode.dispose();
+                vimMode = null;
+                isVimEnabled = false;
+                localStorage.setItem('vimModeEnabled', 'false');
+                updateVimButton(false);
+            } catch (error) {
+                console.error('Error disabling Vim mode:', error);
+            }
+        }
+    }
+}
+
+// Update Vim button appearance
+function updateVimButton(enabled) {
+    const vimButton = document.getElementById('vim-toggle-button');
+    const vimText = document.getElementById('vim-toggle-text');
+    
+    if (vimButton && vimText) {
+        if (enabled) {
+            vimButton.classList.add('active');
+            vimText.textContent = 'Vim On';
+        } else {
+            vimButton.classList.remove('active');
+            vimText.textContent = 'Vim';
+        }
+    }
 }
 
 // Get problem key from URL
@@ -1176,6 +1244,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Run button handler
     document.getElementById('run-button').addEventListener('click', runCode);
+    
+    // Vim toggle button handler
+    document.getElementById('vim-toggle-button').addEventListener('click', function() {
+        toggleVimMode(!isVimEnabled);
+    });
+    
+    // Initialize vim button state
+    const savedVimState = localStorage.getItem('vimModeEnabled');
+    if (savedVimState === 'true') {
+        updateVimButton(true);
+    }
     
     // Close on outside click
     document.getElementById('code-editor-modal').addEventListener('click', function(e) {

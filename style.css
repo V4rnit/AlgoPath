@@ -182,6 +182,19 @@ body {
     text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
 }
 
+.creator-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #b0b0b0;
+    font-style: italic;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    flex-basis: 100%;
+    order: 10;
+}
+
 .head i {
     font-size: 28px;
     transition: all 0.3s ease;
@@ -816,6 +829,41 @@ table {
     padding-right: 60px;
     background: rgba(15, 15, 15, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vim-toggle-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.vim-toggle-button:hover {
+    background: rgba(124, 58, 237, 0.3);
+    border-color: rgba(124, 58, 237, 0.5);
+    color: #a78bfa;
+    transform: translateY(-1px);
+}
+
+.vim-toggle-button.active {
+    background: rgba(124, 58, 237, 0.4);
+    border-color: rgba(124, 58, 237, 0.6);
+    color: #a78bfa;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
 }
 
 .language-indicator {

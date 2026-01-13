@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Monaco Editor -->
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
+    <!-- Monaco Editor Vim -->
+    <script src="https://unpkg.com/monaco-vim@0.4.0/dist/monaco-vim.js"></script>
 </head>
 <body>
     <!-- Animated Background -->
@@ -41,6 +43,7 @@
         <a href="https://github.com/V4rnit" target="_blank">
             <i class="fa-brands fa-github"></i>
         </a>
+        <span class="creator-text">Created by Varnit Rawat</span>
     </header>
 
     <main>
@@ -350,9 +353,14 @@
                 <div class="editor-panel" id="editor-panel">
                     <div class="editor-header">
                         <span class="language-indicator">Java</span>
-                        <button class="run-button" id="run-button">
-                            <i class="fa-solid fa-play"></i> Run
-                        </button>
+                        <div class="header-actions">
+                            <button class="vim-toggle-button" id="vim-toggle-button" title="Toggle Vim Mode">
+                                <i class="fa-solid fa-keyboard"></i> <span id="vim-toggle-text">Vim</span>
+                            </button>
+                            <button class="run-button" id="run-button">
+                                <i class="fa-solid fa-play"></i> Run
+                            </button>
+                        </div>
                     </div>
                     <div id="code-editor" class="monaco-editor-container"></div>
                     <div class="resizer-vertical" id="output-resizer"></div>
